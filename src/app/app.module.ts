@@ -15,6 +15,9 @@ import { NuevaSucursalComponent } from './nueva-sucursal/nueva-sucursal.componen
 import { NuevoIngredienteComponent } from './nuevo-ingrediente/nuevo-ingrediente.component';
 import { NuevoPlatilloComponent } from './nuevo-platillo/nuevo-platillo.component';
 import { VerPedidoComponent } from './ver-pedido/ver-pedido.component';
+import { ModificarSucursalComponent } from './modificar-sucursal/modificar-sucursal.component';
+import { ModificarPlatilloComponent } from './modificar-platillo/modificar-platillo.component';
+import { ModificarIngredienteComponent } from './modificar-ingrediente/modificar-ingrediente.component';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import { VerPedidoComponent } from './ver-pedido/ver-pedido.component';
     NuevoIngredienteComponent,
     NuevoPlatilloComponent,
     VerPedidoComponent,
+    ModificarSucursalComponent,
+    ModificarPlatilloComponent,
+    ModificarIngredienteComponent,
    
   ],
   imports: [

@@ -1,10 +1,6 @@
 <div class="container mt-3">
+  <h2 class="text-center">Información de Pedidos</h2>
     <div class="row">
-      <div class="col-12">
-        <div class="form-outline mb-3">
-          <button class="btn btn-primary">Agregar Pedido</button>
-        </div>
-      </div>
       <div class="col-12">
         <table class="table align-middle bg-white">
           <thead class="bg-light">
@@ -40,7 +36,7 @@
                 <button type="button" class="btn btn-primary">Completado</button>
               </td>
               <td>
-                <button type="button" class="btn btn-primary">Ver</button>
+                <button type="button" class="btn btn-primary"[routerLink]="['/VerPedido']">Ver</button>
               </td>
             </tr>
           </tbody>

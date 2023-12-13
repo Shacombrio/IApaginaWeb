@@ -1,8 +1,12 @@
 <div class="container mt-3">
     <div class="row">
+      <h2 class="text-center">Información de Platillos</h2>
+      <br>
+      <br>
+      <br>
       <div class="col-12">
         <div class="form-outline mb-3">
-          <button class="btn btn-primary">Agregar Platillo</button>
+          <button class="btn btn-primary"[routerLink]="['/NuevoPlatillo']">Agregar Platillo</button>
         </div>
       </div>
       <div class="col-12">
@@ -48,11 +52,11 @@
                 <p class="fw-normal mb-1">Imagen</p>
             </td>
               <td>
-                <button type="button" class="btn btn-primary">Modificar</button>
+                <button type="button" class="btn btn-primary"[routerLink]="['/ModificarPlatillo']">Modificar</button>
               </td>
               <td>
-                <button type="button" class="btn btn-danger">Eliminar</button>
-              </td>
+                <button type="button" class="btn btn-danger" (click)="eliminarRegistro()">Eliminar</button>
+              </td>              
             </tr>
           </tbody>
         </table>
