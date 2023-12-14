@@ -1,41 +1,37 @@
 <div class="registroUsuario">
     <h2 id="perfiltxt">Registro de Platillo</h2>
-    <form action="">
-        <div class="form-group">
-            <label for="NombreCancha">Nombre del platillo</label>
-            <input type="text" class="form-control" placeholder="Ingrese el nombre" formControlName="NombreCancha" id="NombreCancha">
+    <form [formGroup]="platilloForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nombre">Nombre del platillo</label>
+        <input type="text" class="form-control" placeholder="Ingrese el nombre" formControlName="nombre" id="nombre">
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" class="form-control" placeholder="Ingrese la descripción" formControlName="descripcion" id="descripcion">
+      </div>
+      <div class="form-group">
+        <label for="costo">Costo</label>
+        <input type="text" class="form-control" placeholder="Ingrese el costo" formControlName="costo" id="costo">
+      </div>
+      <div class="form-group">
+        <label for="idPreferencia">ID Preferencia</label>
+        <input type="text" class="form-control" placeholder="Preferencia" formControlName="idPreferencia" id="idPreferencia">
+      </div>      
+      <div class="mb-3">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" formControlName="platillo_dia" id="platilloDelDia">
+          <label class="form-check-label fw-normal mb-1" for="platilloDelDia">Platillo del día</label>
         </div>
-        <div class="form-group">
-            <label for="NombreCancha">Descripción</label>
-            <input type="text" class="form-control" placeholder="Ingrese la descripción" formControlName="NombreCancha" id="NombreCancha">
-        </div>
-        <div class="form-group">
-            <label for="NombreCancha">Costo</label>
-            <input type="text" class="form-control" placeholder="Ingrese el costo" formControlName="NombreCancha" id="NombreCancha">
-        </div>
-        <div class="mb-3">
-            <label for="preferencia" class="form-label fw-normal">Preferencia</label>
-            <select id="preferencia" class="form-control">
-                <option value="opcion1">Opción 1</option>
-                <option value="opcion2">Opción 2</option>
-                <option value="opcion3">Opción 3</option>
-            </select>
-        </div>        
-        <div class="mb-3">
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="platilloDelDia">
-                <label class="form-check-label fw-normal mb-1" for="platilloDelDia">Platillo del día</label>
-            </div>
-        </div>        
-        <div class="mb-3">
-            <label for="imagen" class="form-label fw-normal">Imagen</label>
-            <input type="file" class="form-control" id="imagen" accept="image/*">
-        </div>
-
-        <div class="d-flex justify-content-center mt-3">
-            <button type="submit" class="btn btn-primary mr-6">Guardar</button>
-            <button type="button" class="btn btn-secondary" [routerLink]="['/Platillos']">Salir</button>
-          </div>
-          
+      </div>        
+      <div class="form-group">
+        <label for="url_imagen">URL Imagen</label>
+        <input type="text" class="form-control" placeholder="Ingrese la URL de la imagen" formControlName="url_imagen" id="url_imagen">
+      </div>
+  
+      <div class="d-flex justify-content-center mt-3">
+        <button type="submit" class="btn btn-primary mr-6">Guardar</button>
+        <button type="button" class="btn btn-secondary" [routerLink]="['/Platillos']">Salir</button>
+      </div>
     </form>
-</div>
+  </div>
+  

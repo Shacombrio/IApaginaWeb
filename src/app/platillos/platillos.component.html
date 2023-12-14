@@ -1,65 +1,45 @@
 <div class="container mt-3">
-    <div class="row">
-      <h2 class="text-center">Información de Platillos</h2>
-      <br>
-      <br>
-      <br>
-      <div class="col-12">
-        <div class="form-outline mb-3">
-          <button class="btn btn-primary"[routerLink]="['/NuevoPlatillo']">Agregar Platillo</button>
-        </div>
-      </div>
-      <div class="col-12">
-        <table class="table align-middle bg-white">
-          <thead class="bg-light">
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Costo</th>
-              <th>Preferencia</th>
-              <th>Platillo del día</th>
-              <th>Imagen</th>
-              <th>Modificar</th>
-              <th>Eliminar</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-            <td>
-                <p class="fw-normal mb-1">ID</p>
-            </td>
-              <td>
-                <div class="d-flex align-items-center">
-                  <div class="mb-1">
-                    <p class="fw-bold mb-1">Nombre</p>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <p class="fw-normal mb-1">Descripción</p>
-             </td>
-             <td>
-                <p class="fw-normal mb-1">Costo</p>
-            </td>
-            <td>
-                <p class="fw-normal mb-1">Preferencia</p>
-            </td>
-            <td>
-                <p class="fw-normal mb-1">Sí / No</p>
-            </td>
-            <td>
-                <p class="fw-normal mb-1">Imagen</p>
-            </td>
-              <td>
-                <button type="button" class="btn btn-primary"[routerLink]="['/ModificarPlatillo']">Modificar</button>
-              </td>
-              <td>
-                <button type="button" class="btn btn-danger" (click)="eliminarRegistro()">Eliminar</button>
-              </td>              
-            </tr>
-          </tbody>
-        </table>
+  <div class="row">
+    <h2 class="text-center">Información de Platillos</h2>
+    <br>
+    <br>
+    <br>
+    <div class="col-12">
+      <div class="form-outline mb-3">
+        <button class="btn btn-primary" [routerLink]="['/NuevoPlatillo']">Agregar Platillo</button>
       </div>
     </div>
+    <div class="col-12">
+      <table class="table align-middle bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Costo</th>
+            <th>Preferencia</th>
+            <th>Platillo del día</th>
+            <th>Modificar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let platillo of platillos">
+            <td>{{ platillo.id }}</td>
+            <td>{{ platillo.nombre }}</td>
+            <td>{{ platillo.descripcion }}</td>
+            <td>{{ platillo.costo }}</td>
+            <td>{{ platillo.preferencias_id }}</td>
+            <td>{{ platillo.platilloDelDia ? 'Sí' : 'No' }}</td>
+            <td>
+              <button type="button" class="btn btn-primary" [routerLink]="['/ModificarPlatillo']">Modificar</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger" (click)="eliminarRegistro()">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+</div>

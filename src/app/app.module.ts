@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DatosRestautanteComponentComponent } from './datos-restautante.component/datos-restautante.component.component';
+import { DatosRestauranteComponentComponent } from './datos-restaurante.component/datos-restautante.component.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HeadComponent } from './head/head.component';
 import { CanvasComponent } from './canvas/canvas.component';
@@ -18,12 +18,16 @@ import { VerPedidoComponent } from './ver-pedido/ver-pedido.component';
 import { ModificarSucursalComponent } from './modificar-sucursal/modificar-sucursal.component';
 import { ModificarPlatilloComponent } from './modificar-platillo/modificar-platillo.component';
 import { ModificarIngredienteComponent } from './modificar-ingrediente/modificar-ingrediente.component';
-
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DatosRestautanteComponentComponent,
+    DatosRestauranteComponentComponent,
     NavbarComponent,
     HeadComponent,
     CanvasComponent,
@@ -38,11 +42,18 @@ import { ModificarIngredienteComponent } from './modificar-ingrediente/modificar
     ModificarSucursalComponent,
     ModificarPlatilloComponent,
     ModificarIngredienteComponent,
+    LoginComponent,
+    HomeComponent,
+   
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

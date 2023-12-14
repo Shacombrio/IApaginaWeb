@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
+import { PlatillosService } from '../platillos.service';
 
 @Component({
   selector: 'app-platillos',
@@ -7,6 +8,18 @@ import Swal from 'sweetalert2';
   styleUrls: ['./platillos.component.css']
 })
 export class PlatillosComponent {
+
+  platillos: any[] = []; 
+
+  constructor(private platillosService: PlatillosService) {}
+
+
+  ngOnInit():void{
+    this.platillosService.obtenerPlatillo().subscribe((data)=>{ 
+      this.platillos = data;
+    })
+  }
+  
 
   eliminarRegistro() {
 

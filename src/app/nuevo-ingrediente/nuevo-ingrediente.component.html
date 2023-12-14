@@ -1,14 +1,15 @@
 <div class="registroUsuario">
     <h2 id="perfiltxt">Registro de Ingrediente</h2>
-    <form action="">
-        <div class="form-group">
-            <label for="NombreCancha">Nombre ingrediente</label>
-            <input type="text" class="form-control" placeholder="Ingrese el nombre" formControlName="NombreCancha" id="NombreCancha">
-        </div>
-
-        <div class="d-flex justify-content-center mt-3">
-            <button type="submit" class="btn btn-primary mr-2">Guardar</button>
-            <button type="button" class="btn btn-secondary"[routerLink]="['/Ingredientes']">Salir</button>
-        </div>
+    <form [formGroup]="ingredienteForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nombre">Nombre ingrediente</label>
+        <input type="text" class="form-control" placeholder="Ingrese el nombre" formControlName="nombre" id="nombre">
+      </div>
+  
+      <div class="d-flex justify-content-center mt-3">
+        <button type="submit" class="btn btn-primary mr-2">Guardar</button>
+        <button type="button" class="btn btn-secondary" [routerLink]="['/Ingredientes']">Salir</button>
+      </div>
     </form>
-</div>
+  </div>
+  

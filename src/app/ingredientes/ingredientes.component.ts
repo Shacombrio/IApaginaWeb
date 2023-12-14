@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
-
+import { IngredientesService } from '../ingredientes.service';
 @Component({
   selector: 'app-ingredientes',
   templateUrl: './ingredientes.component.html',
@@ -8,7 +8,17 @@ import Swal from 'sweetalert2';
 })
 export class IngredientesComponent {
 
+  ingredientes: any[] = []; 
 
+  constructor(private IngredientesService: IngredientesService) {}
+
+
+  ngOnInit():void{
+    this.IngredientesService.obtenerIngredientes().subscribe((data)=>{ 
+      this.ingredientes = data;
+    })
+  }
+  
 
 
 

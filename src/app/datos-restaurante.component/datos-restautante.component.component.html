@@ -20,31 +20,17 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let sucursal of sucursales">
+            <td>{{ sucursal.id }}</td>
+            <td>{{ sucursal.nombre }}</td>
+            <td>{{ sucursal.direccion }}</td>
+            <td>{{ sucursal.latitud }}</td>
+            <td>{{ sucursal.longitud }}</td>
             <td>
-              <p class="fw-normal mb-1">ID</p>
+              <button type="button" class="btn btn-primary" [routerLink]="['/ModificarSucursal', sucursal.id]">Modificar</button>
             </td>
             <td>
-              <div class="d-flex align-items-center">
-                <div class="mb-1">
-                  <p class="fw-bold mb-1">Sucursal</p>
-                </div>
-              </div>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Dirección</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Latitud</p>
-            </td>
-            <td>
-              <p class="fw-normal mb-1">Longitud</p>
-            </td>
-            <td>
-              <button type="button" class="btn btn-primary"[routerLink]="['/ModificarSucursal']">Modificar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn-danger" (click)="eliminarRegistro()">Eliminar</button>
+              <button type="button" class="btn btn-danger" (click)="eliminarRegistro(sucursal.id)">Eliminar</button>
             </td> 
           </tr>
         </tbody>
@@ -52,3 +38,4 @@
     </div>
   </div>
 </div>
+

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DatosRestautanteComponentComponent } from './datos-restautante.component/datos-restautante.component.component';
+import { LoginComponent } from './login/login.component';
+import { DatosRestauranteComponentComponent } from './datos-restaurante.component/datos-restautante.component.component';
 import { PlatillosComponent } from './platillos/platillos.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { IngredientesComponent } from './ingredientes/ingredientes.component';
@@ -13,17 +14,18 @@ import { ModificarIngredienteComponent } from './modificar-ingrediente/modificar
 import { ModificarPlatilloComponent } from './modificar-platillo/modificar-platillo.component';
 
 const routes: Routes = [
-  {path:'DatosRestaurante', component: DatosRestautanteComponentComponent},
-  {path: 'Platillos', component: PlatillosComponent},
-  {path: 'Pedidos', component:PedidosComponent},
-  {path: 'Ingredientes', component:IngredientesComponent},
-  {path: 'NuevaSucursal', component:NuevaSucursalComponent},
-  {path: 'NuevoIngrediente', component:NuevoIngredienteComponent},
-  {path: 'NuevoPlatillo', component:NuevoPlatilloComponent},
-  {path: 'VerPedido', component:VerPedidoComponent},
-  {path: 'ModificarSucursal', component:ModificarSucursalComponent},
-  {path: 'ModificarPlatillo', component:ModificarPlatilloComponent},
-  {path: 'ModificarIngrediente', component:ModificarIngredienteComponent},
+  { path: 'login', component: LoginComponent },  
+  { path: 'DatosRestaurante', component: DatosRestauranteComponentComponent },
+  { path: 'Platillos', component: PlatillosComponent },
+  { path: 'Pedidos', component: PedidosComponent },
+  { path: 'Ingredientes', component: IngredientesComponent },
+  { path: 'NuevaSucursal', component: NuevaSucursalComponent },
+  { path: 'NuevoIngrediente', component: NuevoIngredienteComponent },
+  { path: 'NuevoPlatillo', component: NuevoPlatilloComponent },
+  { path: 'VerPedido', component: VerPedidoComponent },
+  { path: 'ModificarSucursal/:id', component: ModificarSucursalComponent },
+  { path: 'ModificarPlatillo', component: ModificarPlatilloComponent },
+  { path: 'ModificarIngrediente', component: ModificarIngredienteComponent },
 ];
 
 @NgModule({
@@ -31,3 +33,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
