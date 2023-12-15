@@ -18,4 +18,9 @@ export class IngredientesService {
   crearIngrediente(ingredienteData: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/ingredientes/crearIngrediente`, ingredienteData);
   }
+
+  eliminarIngrediente(id: string): Observable<any> {
+    const url = `${this.apiUrl}/ingredientes/eliminarIngrediente`;
+    return this.http.delete(url, { body: { id } });
+  }
 }

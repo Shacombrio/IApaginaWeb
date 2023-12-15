@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ModificarIngredienteComponent,
     LoginComponent,
     HomeComponent,
+   
    
    
   ],

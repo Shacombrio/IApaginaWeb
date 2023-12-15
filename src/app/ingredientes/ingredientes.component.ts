@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
 import { IngredientesService } from '../ingredientes.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-ingredientes',
   templateUrl: './ingredientes.component.html',
@@ -10,7 +12,7 @@ export class IngredientesComponent {
 
   ingredientes: any[] = []; 
 
-  constructor(private IngredientesService: IngredientesService) {}
+  constructor(private IngredientesService: IngredientesService, private router: Router) {}
 
 
   ngOnInit():void{
@@ -22,8 +24,7 @@ export class IngredientesComponent {
 
 
 
-  eliminarRegistro() {
-
+  eliminarRegistro(id: string) {
     Swal.fire({
       title: '¿Estás seguro de eliminar?',
       text: 'Esta acción no se puede deshacer.',
@@ -34,14 +35,31 @@ export class IngredientesComponent {
       confirmButtonText: 'Sí, eliminar'
     }).then((result) => {
       if (result.isConfirmed) {
-        //lógica para eliminar el registro
-        Swal.fire(
-          'Eliminado',
-          'El registro ha sido eliminado correctamente.',
-          'success'
+        this.IngredientesService.eliminarIngrediente(id).subscribe(
+          response => {
+            Swal.fire(
+              'Eliminado',
+              'El ingrediente ha sido eliminado correctamente.',
+              'success'
+            ).then(() => {
+              // Navegar a la página de Ingredientes
+              this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+                this.router.navigate(['Ingredientes']);
+              });
+            });
+          },
+          error => {
+            console.error('Error al eliminar el ingrediente', error);
+  
+            Swal.fire(
+              'Error',
+              'Hubo un problema al eliminar el ingrediente.',
+              'error'
+            );
+          }
         );
       }
     });
   }
-
+  
 }

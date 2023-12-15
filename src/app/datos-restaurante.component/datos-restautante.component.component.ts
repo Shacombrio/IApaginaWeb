@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { SucursalesService } from '../sucursales.service';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-datos-restautante.component',
@@ -12,7 +15,7 @@ import { RouterModule } from '@angular/router';
 export class DatosRestauranteComponentComponent implements OnInit {
   sucursales: any[] = []; 
 
-  constructor(private sucursalesService: SucursalesService) {}
+  constructor(private sucursalesService: SucursalesService,  private router: Router) {}
 
 
   ngOnInit():void{
@@ -35,21 +38,23 @@ export class DatosRestauranteComponentComponent implements OnInit {
       if (result.isConfirmed) {
         this.sucursalesService.eliminarSucursal(id).subscribe(
           response => {
-           
             Swal.fire(
               'Eliminado',
               'El registro ha sido eliminado correctamente.',
               'success'
             );
+            this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['DatosRestaurante']);
+            });
           },
           error => {
-           
             console.error('Error al eliminar la sucursal', error);
           }
         );
       }
     });
   }
+  
 }
 
 

@@ -12,7 +12,6 @@
           <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Modificar</th>
             <th>Eliminar</th>
           </tr>
         </thead>
@@ -21,10 +20,7 @@
             <td>{{ ingrediente.id }}</td>
             <td>{{ ingrediente.nombre }}</td>
             <td>
-              <button type="button" class="btn btn-primary" [routerLink]="['/ModificarIngrediente']">Modificar</button>
-            </td>
-            <td>
-              <button type="button" class="btn btn-danger" (click)="eliminarRegistro()">Eliminar</button>
+              <button type="button" class="btn btn-danger" (click)="eliminarRegistro(ingrediente.id)">Eliminar</button>
             </td>
           </tr>
         </tbody>

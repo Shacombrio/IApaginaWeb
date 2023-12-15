@@ -1,46 +1,27 @@
 <div class="container mt-3">
   <h2 class="text-center">Información de Pedidos</h2>
-    <div class="row">
-      <div class="col-12">
-        <table class="table align-middle bg-white">
-          <thead class="bg-light">
-            <tr>
-              <th>ID lista</th>
-              <th>Usuario</th>
-              <th>Platillo</th>
-              <th>Pedido</th>
-              <th>Pedido Completado</th>
-              <th>Visualizar</th>
-              
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
+  <div class="row">
+    <div class="col-12">
+      <table class="table align-middle bg-white">
+        <thead class="bg-light">
+          <tr>
+            <th>ID </th>
+            <th>Usuario</th>
+            <th>Fecha</th>
+            <th>Pedido Completado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pedido of pedidos">
+            <td>{{ pedido.id }}</td>
+            <td>{{ pedido.usuario_id }}</td>
+            <td>{{ pedido.fecha }}</td>
             <td>
-                <p class="fw-normal mb-1">ID</p>
+              <button type="button" class="btn btn-danger" (click)="completarPedido(pedido.id)">Completado</button>
             </td>
-              <td>
-                <div class="d-flex align-items-center">
-                  <div class="mb-1">
-                    <p class="fw-bold mb-1">Nombre</p>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <p class="fw-normal mb-1">Platillo</p>
-             </td>
-             <td>
-                <p class="fw-normal mb-1">Pedido</p>
-            </td>
-              <td>
-                <button type="button" class="btn btn-primary">Completado</button>
-              </td>
-              <td>
-                <button type="button" class="btn btn-primary"[routerLink]="['/VerPedido']">Ver</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
